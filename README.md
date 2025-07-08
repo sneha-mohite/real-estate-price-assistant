@@ -37,11 +37,9 @@ A hybrid machine learning and large language model (LLM) system for real estate 
    The model relies on the [USA Real Estate Dataset](https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset) from Kaggle for both training and inference.
 
    - Download the dataset manually from the link above.
-   - Place the CSV files into the `data/` directory:
+   - Rename the main CSV file to `usa-real-estate-dataset.csv` (if needed).
+   - Place it inside the `data/` directory:
 
-     ```
-     real_estate_price_assistant/data/
-     ```
    - The training pipeline (`train_model.py`) will automatically load and process data from that location.
 
    ⚠️ **Important:** This dataset is also used at inference time to provide location-based context and feature lookups. The chatbot and prediction system will not work correctly without it.
