@@ -40,7 +40,7 @@ A hybrid machine learning and large language model (LLM) system for real estate 
    - Place the CSV files into the `data/` directory:
 
      ```
-     real_estate_price_assistant/data/csv/
+     real_estate_price_assistant/data/
      ```
    - The training pipeline (`train_model.py`) will automatically load and process data from that location.
 
