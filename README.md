@@ -32,7 +32,22 @@ A hybrid machine learning and large language model (LLM) system for real estate 
    GOOGLE_API_KEY=xxxx
    ```
 
-2. **Python & Dependencies**
+3. **Download the Data**
+
+   The model relies on the [USA Real Estate Dataset](https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset) from Kaggle for both training and inference.
+
+   - Download the dataset manually from the link above.
+   - Place the CSV files into the `data/csv/` directory:
+
+     ```
+     real_estate_price_assistant/data/csv/
+     ```
+   - The training pipeline (`train_model.py`) will automatically load and process data from that location.
+
+   ⚠️ **Important:** This dataset is also used at inference time to provide location-based context and feature lookups. The chatbot and prediction system will not work correctly without it.
+
+
+4. **Python & Dependencies**
 
    - Python 3.9+ is recommended.
    - Create and activate a virtual environment:
@@ -42,7 +57,7 @@ A hybrid machine learning and large language model (LLM) system for real estate 
    source .venv/bin/activate       # On Windows: .venv\Scripts\activate
    pip install -r requirements.txt
    ```
-3. **Model Training**
+5. **Model Training**
    
    If the trained model is missing or fails to load, you can retrain it:
    ```
@@ -50,12 +65,10 @@ A hybrid machine learning and large language model (LLM) system for real estate 
    ```
    Note: The model is trained using GPU. If you do not have a GPU, modify [line 27 of train_model.py](src/train_model.py) to use CPU.
 
-4. **Using the assistant**
+6. **Using the assistant**
    1. 🧪 [Jupyter Notebook](src/chatbot_test_notebook.ipynb)
    2. 🖼️ Gradio Web Interface
     
       ```
       python src/chatbot_app.py
       ```
-
-The model is trained on the [USA Real Estate Dataset](https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset) from Kaggle.
